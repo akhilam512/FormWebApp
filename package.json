@@ -26,6 +26,7 @@
   "homepage": "https://github.com/akhilam512/FormWebApp#readme",
   "dependencies": {
     "body-parser": "^1.18.3",
+    "knex": "^0.15.2",
     "multer": "^1.4.0"
   },
   "devDependencies": {
