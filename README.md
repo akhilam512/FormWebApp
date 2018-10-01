@@ -2,7 +2,7 @@
 A simple form submission web app made using Node, Express and MySQL.
 
 When the server.js file is run on the localhost, the home page is displayed :
-![home page](read me files/Home. - Mozilla Firefox_004.png)
+![home page](readme files/Home. - Mozilla Firefox_004.png)
 
 - When the Sign In button is clicked, the registration form page is displayed :
 ![ sign up form](/read me files/Sign up - Mozilla Firefox_006.png)
