@@ -1,0 +1,44 @@
+#h1 {
+  color: black;
+  text-align: center;
+  font-family: "Arial";
+  font-size: 50px;
+
+}
+
+#b {
+  background-color: lightgrey;
+  text-align: center;
+
+}
+
+#mail {
+  height: 50px;
+  font-size:20pt;
+}
+
+#pass {
+  height: 50px;
+  font-size:20pt;  
+
+}
+#Input {
+  background-color: grey;
+  color: white;
+  font-family: "Arial";
+  font-size: 30px;
+  text-align: center;
+}
+#sub {
+  display: inline-block;
+  border-radius: 12px;
+  padding: 12px 42px;
+  font-size:30px;
+}
+
+#sub:hover {
+  background-color: #808080; 
+    color: white;
+
+
+}

@@ -1,0 +1,61 @@
+h1 {
+	
+	color: black;
+	text-align: center;
+	font-family: "Arial";
+	font-size: 50px;
+
+}
+#b {
+	background-color: lightgrey;
+}
+
+#fname 
+{	height: 50px;
+	font-size: 20pt;
+}
+#lname {
+	height: 50px;
+	font-size: 20pt;
+}
+#email {
+	height: 50px;
+	font-size:20pt;
+}
+
+
+#pw1 {
+	height: 50px;
+	font-size:20pt;
+}
+
+#pw2 {
+	height: 50px;
+	font-size:20pt;
+}
+
+#Input {
+	background-color: grey;
+	color: white;
+	font-family: "Arial";
+	font-size: 30px;
+	text-align: center;
+}
+
+#b1 {
+	text-align: center;
+}
+
+#sub {
+	display: inline-block;
+	border-radius: 12px;
+	padding: 12px 42px;
+	font-size:30px;
+}
+
+#sub:hover {
+	background-color: #808080; 
+    color: white;
+
+
+}
