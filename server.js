@@ -1,10 +1,14 @@
 const express = require('express')
+const http = require('http')
 const request = require('request')
-const bodyParser = require('body-parser')
+const bodyParser = require('body-parser')  //for parsing POST requests
 const mysql = require('mysql')
+const crypto = require('crypto') // for hasing passwords
 const app = express()
-app.use(express.static('public'))
-app.use(bodyParser.urlencoded({ extended: true}))
+
+app.use(express.static(__dirname + '/public'));//allows access of static files to express in the public directory
+var urlencodedParser = bodyParser.urlencoded({ extended: true})
+app.use(bodyParser.json());
 app.set('view engine', 'ejs')
 
 
@@ -12,9 +16,10 @@ const con = mysql.createConnection({
     host    : 'localhost',
     user    : 'root',
     password: '123',
-    database: 'sitepoint'
+    database: 'user'
   
 })
+
 con.connect(function(err){
     if(err){
         console.log("ERROR CONNECTING TO DB"+ err)
@@ -24,35 +29,58 @@ con.connect(function(err){
 })
 
 
-/*
-function handle_database(req,res) {
-    pool.query("select * from user_data", function(err,rows){
-        if(err) {
-            return res.json({'error':true, 'message': 'Error occured '+err})
+
+app.get('/', function(req, res){
+    res.render('home')
+})
+
+app.get('/signin', function(req, res){
+    res.render("signin", {user: req.query})
+
+})
+
+app.post('/signin',  urlencodedParser, function(req, res){
+    given_mail = req.body.mail 
+    given_pass = req.body.pw
+
+    con.query("SELECT email, pass FROM personal where email = ? AND pass = ? ", [given_mail, given_pass], function(err, result){
+        if(err)
+            console.log("ERROR DB - LOGIN" +err)
+        else{
+        
+        res.render("success_signin", {data: req.body})
         }
-        res.json(rows)
+    } )
+
+})
+
+
+
+app.get('/signup', function(req,res) {
+    res.render("signup", {user: req.query})
+    
+})
+
+
+app.post('/signup', urlencodedParser, function(req, res){
+    res.render("success_signup", {data: req.body})
+
+    var users={
+        "first_name":req.body.fname,
+        "last_name" :req.body.lname,
+        "email"     :req.body.email,
+        "gender"    :req.body.gender,
+        "pass"      :req.body.pw1
+    }
+    
+    con.query('INSERT INTO personal SET ?', users, function(err, results, fields){
+        if(err)
+            console.log("Error inserting")
+        else{
+            console.log("Success! Inserted: ", results)
+        }
     })
-}
-*/
-app.get('/', function(req,res) {
-    res.render('signup')
-})
-
-app.post('/success', function(req, res){
-    
-        if(err) 
-            console.log("ERROR ERROR " +err)
-    
-        console.log("DATA RECIEVED \n")
-       
-        let fname = req.body.email
-        console.log(fname)
-})
+})       
 
 
-app.listen(3002, function(){
-    console.log("\nUp & Running @ 3002\n")
-})
-con.end(function(err){
-
-})
+app.listen(3002)
