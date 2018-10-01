@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title> Sign In </title>
+		<link rel="stylesheet" type="text/css" href="/signin_css.css">
+
+
+	</head>
+	<body id="b">
+
+		<h1 id="h1"> Sign In! </h1> <br> 
+
+		<div id="Input">
+			<fieldset>
+				<form id="persona_login" action="/signin" method="post">
+					<input type="text" id="mail" name="email" value="<%= user.mail %>" placeholder="Email"><hr> 
+					<input type="Password" id="pass" name="pw" placeholder="Password"><hr>
+					<input type="submit" id="sub" value="Submit">
+				</form>
+				<p id="incorrect">
+
+				</p>
+			</fieldset>
+		</div>
+
+	</body>
+</html>

@@ -4,7 +4,7 @@
 	<head>
 		<title> Sign up </title>
 
-		<link rel="stylesheet" type="text/css" href="signup_css.css">
+		<link rel="stylesheet" type="text/css" href="/signup_css.css">
 		
 	</head>
 
@@ -19,30 +19,32 @@
 		<div id="Input">
 			<fieldset>
 				
-				<form id="persona" action="/success" method="post"><br>
+				<form id="persona" action="/signup" method="post"><br>
 					
-					<input type="text" id="fname" name="fname" placeholder="First Name" size="20"  autofocus required>
+					<input type="text" id="fname" value="<%= user.ffname %>" name="fname" placeholder="First Name" size="20"  autofocus required  >
 					
-					<input type="text" id="lname" name="lname" placeholder="Last Name" size="15" required><br><hr>
+					<input type="text" id="lname" value="<%= user.llname %>" name="lname" placeholder="Last Name" size="15" required><br><hr>
 					
 					<input type="text" id="email" name="email" placeholder="Email" size="40" required><br><hr>
 
-        			<input type="radio" name="gender" checked> <label for="male"> Male</label>
-        			<input type="radio" name="gender" > <label for="female">  Female</label>  
-        			<input type="radio" name="gender"> <label for="other">  Other<br><br><hr>
+        			<input type="radio" name="gender" value="Male" checked> <label for="male"> Male</label>
+        			<input type="radio" name="gender"  value="Female"> <label for="female">  Female</label>  
+        			<input type="radio" name="gender" value="Other"> <label for="other">  Other<br><br><hr>
 	
-        			<input type="password" id="pw1" name="pw1" placeholder="Password" size="20" required> <hr>
+        			<input type="password" id="pw1" value="<%= user.pass %>" name="pw1" placeholder="Password" size="20" required> <hr>
 
-        			<input type="password" id="pw2" name="pw2" placeholder="Confirm Password" size="20" required>
+        			<input type="password" id="pw2" placeholder="Confirm Password" size="20" required><hr>
+
+        			<div id="b1">
+						<input type="submit" id="sub" value="Submit">
+					</div>
 
 				</form>
 			</fieldset>
 			
 		</div>
 		<br>
-		<div id="b1">
-			<input type="button" id="sub" type="submit" value="Submit">
-		</div>
+		
 	</body>
 
 </html>
