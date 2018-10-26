@@ -42,11 +42,14 @@ app.get('/signin', function(req, res){
 app.post('/signin',  urlencodedParser, function(req, res){
     given_mail = req.body.mail 
     given_pass = req.body.pw
-
-    con.query("SELECT email, pass FROM personal where email = ? AND pass = ? ", [given_mail, given_pass], function(err, result){
+    query_string = `SELECT email, pass FROM personal where email = ${given_mail} AND pass = ${given_pass}`
+    con.query(query_string, function(err, result){
         if(err)
-            console.log("ERROR DB - LOGIN" +err)
-        else{
+        {    console.log("ERROR DB - LOGIN" +err)
+            res.render("error_signin.ejs")
+    }
+ 
+    else{
         
         res.render("success_signin", {data: req.body})
         }
@@ -83,4 +86,4 @@ app.post('/signup', urlencodedParser, function(req, res){
 })       
 
 
-app.listen(3002)
+app.listen(3003)A
