@@ -1,0 +1,33 @@
+#error {
+width: 25%;
+  height: 30%;
+  overflow: auto;
+  margin: auto;
+  position: absolute;
+  top: 0; left: 0; bottom: 0; right: 0;
+
+  font-family: "Arial";
+  font-size: 20pt;
+  background-color: darkred;
+  color:white;
+
+  
+  width:2000px;
+  height:400px;
+  text-align: center;
+}
+
+#sub1 {
+  display: inline-block;
+  border-radius: 12px;
+  padding: 12px 42px;
+  font-size:35px;
+}
+
+
+#sub2 {
+  display: inline-block;
+  border-radius: 12px;
+  padding: 12px 42px;
+  font-size:35px;
+}
