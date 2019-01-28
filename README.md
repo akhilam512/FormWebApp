@@ -2,7 +2,7 @@
 ## A simple form submission and verification web app made using NodeJS, Express and MySQL.
 
 When the *server.js* file is run on the localhost, the **home page** is displayed :
-<img src="/readme files/Home. - Mozilla Firefox_004.png">
+    <img src="/readme files/Home. - Mozilla Firefox_004.png">
 
 - When the **Sign Up** button is clicked, the registration form page is displayed :
 <img src="/readme files/Sign up - Mozilla Firefox_006.png">
@@ -21,4 +21,4 @@ And if the user enters the correct registered data, a **"Successful login"** pag
 
 All of the user data is stored in a MySQL database. 
 
-Features coming soon: client side verification of data, encrypted password storage, better, interactive interface.
+Features to implement: client side verification of user data, encrypted password storage, better UI.
